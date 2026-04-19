@@ -1,0 +1,22 @@
+# python3 cli.py probe --email victim@target.com --attacker attacker.example --url https://httpbin.org/post --field email
+
+probe target: https://httpbin.org/post
+field: email
+variants: 15
+
+baseline status=200 length=460
+
+  quoted-localpart         status=200 =base  len=481 (+21)
+  quoted-with-comma        status=200 =base  len=483 (+23)
+  rfc5321-source-route     status=200 =base  len=478 (+18)
+  comment-after-local      status=200 =base  len=485 (+25)
+  comment-before-domain    status=200 =base  len=478 (+18)
+  encoded-word-local       status=200 =base  len=478 (+18)
+  multiple-at-rfc5322      status=200 =base  len=477 (+17)
+  punycode-domain          status=200 =base  len=467 (+7)
+  cfws-folded              status=200 =base  len=482 (+22)
+  dotless-trailing         status=200 =base  len=478 (+18)
+  ipv6-literal             status=200 =base  len=477 (+17)
+  group-syntax             status=200 =base  len=503 (+43)  <- response shape changed
+  nul-byte-inject          status=200 =base  len=483 (+23)
+  backslash-escape         status=200 =base  len=479 (+19)

@@ -1,0 +1,67 @@
+# python3 cli.py gen --email victim@target.com --attacker attacker.example
+
+variant                parser                   domain
+------------------------------------------------------------------------------
+baseline               stdlib.parseaddr         target.com
+baseline               headerregistry.Address   target.com
+baseline               naive.regex              target.com
+baseline               rfc5321.rcpt             target.com
+quoted-localpart       stdlib.parseaddr         target.com"@attacker.example
+quoted-localpart       headerregistry.Address   attacker.example
+quoted-localpart       naive.regex              attacker.example
+quoted-localpart       rfc5321.rcpt             attacker.example
+  ↳ diverge: 2 distinct domains
+quoted-with-comma      stdlib.parseaddr         target.com,x"@attacker.example
+quoted-with-comma      headerregistry.Address   attacker.example
+quoted-with-comma      naive.regex              attacker.example
+quoted-with-comma      rfc5321.rcpt             attacker.example
+  ↳ diverge: 2 distinct domains
+rfc5321-source-route   stdlib.parseaddr         <nodomain>
+rfc5321-source-route   headerregistry.Address   <error: HeaderParseError>
+rfc5321-source-route   naive.regex              target.com
+rfc5321-source-route   rfc5321.rcpt             target.com
+comment-after-local    stdlib.parseaddr         target.com
+comment-after-local    headerregistry.Address   <error: InvalidHeaderDefect>
+comment-after-local    naive.regex              target.com
+comment-after-local    rfc5321.rcpt             target.com
+comment-before-domain  stdlib.parseaddr         target.com
+comment-before-domain  headerregistry.Address   target.com
+comment-before-domain  naive.regex              <nomatch>
+comment-before-domain  rfc5321.rcpt             (attacker.example)target.com
+  ↳ split: one parser sees trusted, another sees attacker
+encoded-word-local     stdlib.parseaddr         attacker.example
+encoded-word-local     headerregistry.Address   <error: InvalidHeaderDefect>
+encoded-word-local     naive.regex              attacker.example
+encoded-word-local     rfc5321.rcpt             attacker.example
+multiple-at-rfc5322    stdlib.parseaddr         <nodomain>
+multiple-at-rfc5322    headerregistry.Address   <error: HeaderParseError>
+multiple-at-rfc5322    naive.regex              attacker.example
+multiple-at-rfc5322    rfc5321.rcpt             attacker.example
+punycode-domain        stdlib.parseaddr         xn--trget-4ve.com
+punycode-domain        headerregistry.Address   xn--trget-4ve.com
+punycode-domain        naive.regex              xn--trget-4ve.com
+punycode-domain        rfc5321.rcpt             xn--trget-4ve.com
+cfws-folded            stdlib.parseaddr         <nodomain>
+cfws-folded            headerregistry.Address   <error: ValueError>
+cfws-folded            naive.regex              attacker.example
+cfws-folded            rfc5321.rcpt             attacker.example
+dotless-trailing       stdlib.parseaddr         <nodomain>
+dotless-trailing       headerregistry.Address   <error: HeaderParseError>
+dotless-trailing       naive.regex              attacker.example
+dotless-trailing       rfc5321.rcpt             attacker.example
+ipv6-literal           stdlib.parseaddr         <nodomain>
+ipv6-literal           headerregistry.Address   <error: ValueError>
+ipv6-literal           naive.regex              attacker.example
+ipv6-literal           rfc5321.rcpt             attacker.example
+group-syntax           stdlib.parseaddr         <nodomain>
+group-syntax           headerregistry.Address   <error: ValueError>
+group-syntax           naive.regex              <nomatch>
+group-syntax           rfc5321.rcpt             attacker.example;
+nul-byte-inject        stdlib.parseaddr         <nodomain>
+nul-byte-inject        headerregistry.Address   <error: HeaderParseError>
+nul-byte-inject        naive.regex              attacker.example
+nul-byte-inject        rfc5321.rcpt             attacker.example
+backslash-escape       stdlib.parseaddr         <nodomain>
+backslash-escape       headerregistry.Address   <error: HeaderParseError>
+backslash-escape       naive.regex              attacker.example
+backslash-escape       rfc5321.rcpt             attacker.example
