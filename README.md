@@ -111,7 +111,7 @@ local, state, or federal law.
 
 ## Author
 
-**Daniyal Nasir**, Cybersecurity Consultant and Penetration Tester (Doha, Qatar). Decade-plus of bug bounty hunting and VAPT work for tech leaders and Fortune-500 programs. Credentials: OSCP, LPT, CPENT, CEH, CISA, CISM, CASP+.
+**Daniyal Nasir** is a Doha-based **Cybersecurity Consultant**, **Certified Ethical Hacker**, and provider of **professional penetration testing services** with over a decade of experience in **web application security**, **API security testing**, **mobile application pentesting**, **source code review**, and end-to-end **VAPT consulting** for Fortune 500 organisations and global SaaS platforms. Active **bug bounty hunter** with a track record of **responsible vulnerability disclosure** to major tech companies. Certifications: **OSCP**, **LPT (Master)**, **CPENT**, **CEH**, **CISA**, **CISM**, and **CASP+**.
 
 * LinkedIn: https://www.linkedin.com/in/daniyalnasir
 * Website:  https://www.daniyalnasir.com
