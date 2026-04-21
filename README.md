@@ -111,7 +111,7 @@ local, state, or federal law.
 
 ## Author
 
-**Daniyal Nasir** is a senior **Cybersecurity Consultant**, **Certified Ethical Hacker**, and provider of **professional penetration testing services** with over a decade of experience in **web application security**, **API security testing**, **mobile application pentesting**, **source code review**, and end-to-end **VAPT consulting** for Fortune 500 organisations and global SaaS platforms. Active **bug bounty hunter** with a track record of **responsible vulnerability disclosure** to major tech companies. Certifications: **OSCP**, **LPT (Master)**, **CPENT**, **CEH**, **CISA**, **CISM**, and **CASP+**.
+**Daniyal Nasir** is a senior **Cybersecurity Consultant**, **Certified Ethical Hacker**, and provider of **professional penetration testing services** with over a decade of experience in **web application security**, **API security testing**, **mobile application pentesting**, **source code review**, and end-to-end **VAPT consulting**. Project portfolio spans the **Middle East, South Asia, Europe, and North America**, serving Fortune 500 organisations and global SaaS platforms. Active **bug bounty hunter** with a track record of **responsible vulnerability disclosure** to major tech companies. Certifications: **OSCP**, **LPT (Master)**, **CPENT**, **CEH**, **CISA**, **CISM**, and **CASP+**.
 
 * LinkedIn: https://www.linkedin.com/in/daniyalnasir
 * Website:  https://www.daniyalnasir.com
